@@ -9,13 +9,15 @@
         <link href="https://fonts.googleapis.com/css2?family=Nova+Mono&display=swap" rel="stylesheet"> 
         <script src="script.js" type="text/javascript" defer></script>
     </head>
-    <body>
+    <body onload="drawGrid()">
         <div class="title">
             <h1>ETCH-A-SKETCH!</h1>
         </div>
-        <div class="containerGrid">
-            <div id="grid">
-
+        <div class="container">
+            <div class="userPanel">
+                <button id="play">New grid</button>
+            </div>
+            <div class="containerGrid">
             </div>
         </div>
     </body>
