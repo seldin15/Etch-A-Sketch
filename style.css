@@ -12,10 +12,22 @@ body {
     margin: 20px;
     font-family: 'Nova Mono', monospace;
     font-size: 32px;
+    padding-left: 170px;
 }
 .container {
     display: flex;
     justify-content: center;
+}
+.userPanel {
+    display: flex;
+    justify-content: center;
+    height: inherit;
+    width: 200px;
+    padding-top: 20px;
+}
+button {
+    width: 120px;
+    height: 40px;
 }
 .containerGrid {
     width: 720px;
@@ -24,10 +36,9 @@ body {
 }
 .rows {
     display: "inline-block";
-    outline: 1px solid #000;
     margin: 0;
     width: 100%;
-    height: 45px;
+    height: 22.5px;
     padding: 0;
 }
 .columns {
@@ -35,6 +46,6 @@ body {
     outline: 1px solid #000;
     margin: 0;
     padding: 0;
-    height: 45px;
-    width: 45px !important;
+    height: 22.5px;
+    width: 22.5px !important;
 }
