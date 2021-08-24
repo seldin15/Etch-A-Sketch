@@ -1,6 +1,6 @@
 
 const button = document.getElementById('play');
-
+const containerGrid = document.querySelector('.containerGrid');
 
 
 button.addEventListener("click", () => {
@@ -11,8 +11,8 @@ function drawGrid(gridSize) {
     for(let i = 0; i < gridSize; i++) {
         const rows = document.createElement('div');
         rows.classList.add('rows');
-        document.querySelector(".containerGrid").appendChild(rows);
-        let rowHeight = document.querySelector('.containerGrid').offsetHeight;
+        containerGrid.appendChild(rows);
+        let rowHeight = containerGrid.offsetHeight;
         rowHeight = rowHeight / gridSize;
         let allRows = document.querySelectorAll('.rows');
         allRows.forEach(rows => {
@@ -25,9 +25,9 @@ function drawGrid(gridSize) {
             columns.addEventListener("mouseenter", function(event) {
                 event.target.style.backgroundColor = "yellow";
             });
-            
-            let colHeight = document.querySelector('.containerGrid').offsetHeight;
-            let colWidth = document.querySelector('.containerGrid').offsetWidth;
+
+            let colHeight = containerGrid.offsetHeight;
+            let colWidth = containerGrid.offsetWidth;
             colHeight = colHeight / gridSize;
             colWidth = colWidth / gridSize;
             let allColHW = document.querySelectorAll('.columns');
@@ -39,7 +39,15 @@ function drawGrid(gridSize) {
 }
 }
 
+function removeGrid() {
+    let allRows = document.querySelectorAll('.rows');
+    allRows.forEach(row => {
+        containerGrid.removeChild(row);
+    });
+}
+
 function resetGrid() {
     let gridSize = prompt("Type in grid size (Max 100)", "");
+    removeGrid();
     drawGrid(gridSize);
 }
