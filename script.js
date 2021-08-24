@@ -1,5 +1,7 @@
-window.onload(drawGrid(32));
+
 const button = document.getElementById('play');
+
+
 
 button.addEventListener("click", () => {
     resetGrid();
@@ -10,6 +12,12 @@ function drawGrid(gridSize) {
         const rows = document.createElement('div');
         rows.classList.add('rows');
         document.querySelector(".containerGrid").appendChild(rows);
+        let rowHeight = document.querySelector('.containerGrid').offsetHeight;
+        rowHeight = rowHeight / gridSize;
+        let allRows = document.querySelectorAll('.rows');
+        allRows.forEach(rows => {
+            rows.style.height = rowHeight + "px";
+        });
         for(let j = 0; j < gridSize; j++) {
             const columns = document.createElement('div');
             columns.classList.add('columns');
@@ -17,12 +25,21 @@ function drawGrid(gridSize) {
             columns.addEventListener("mouseenter", function(event) {
                 event.target.style.backgroundColor = "yellow";
             });
+            
+            let colHeight = document.querySelector('.containerGrid').offsetHeight;
+            let colWidth = document.querySelector('.containerGrid').offsetWidth;
+            colHeight = colHeight / gridSize;
+            colWidth = colWidth / gridSize;
+            let allColHW = document.querySelectorAll('.columns');
+            allColHW.forEach(cols => {
+                cols.style.height = colHeight + "px";
+                cols.style.width = colWidth + "px";
+            })
         }
 }
 }
 
 function resetGrid() {
     let gridSize = prompt("Type in grid size (Max 100)", "");
-    removeGrid();
     drawGrid(gridSize);
 }
