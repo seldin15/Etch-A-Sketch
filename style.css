@@ -1,18 +1,18 @@
 * {
+    font-family: 'Nova Mono', monospace;
     margin: 0;
     padding: 0;
 }
 body {
-    background: #361999;
+    background: #494368;
 }
 .title {
     display: flex;
     justify-content: center;
-    color: white;
-    margin: 20px;
-    font-family: 'Nova Mono', monospace;
+    color: #FC60A8;
+    margin: 10px;
     font-size: 32px;
-    padding-left: 170px;
+    padding-left: 200px;
 }
 .container {
     display: flex;
@@ -20,32 +20,41 @@ body {
 }
 .userPanel {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     height: inherit;
     width: 200px;
     padding-top: 20px;
 }
 button {
-    width: 120px;
+    background-color: #CEEC97;
+    margin: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #494368;
+    font-weight: bolder;
+    text-align: center;
+    display: inline-block;
+    width: 160px;
     height: 40px;
+    border: none;
+    border-radius: 5px;
+}
+button:hover {
+    background-color: #F4B393;
+    color: #7A28CB;
 }
 .containerGrid {
-    width: 720px;
-    height: 720px;
+    width: 790px;
+    height: 790px;
     background-color: white;
 }
 .rows {
-    display: "inline-block";
     margin: 0;
-    width: 100%;
-    height: 22.5px;
     padding: 0;
 }
 .columns {
     display: inline-block;
-    outline: 1px solid #000;
+    outline: 1px solid rgba(0,0,0, 0.2);
     margin: 0;
     padding: 0;
-    height: 22.5px;
-    width: 22.5px !important;
 }

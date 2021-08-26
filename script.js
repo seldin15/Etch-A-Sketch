@@ -2,12 +2,21 @@
 const button = document.getElementById('play');
 const randomBtn = document.getElementById('rgb');
 const containerGrid = document.querySelector('.containerGrid');
+const normalButton = document.getElementById('normal');
 
 randomBtn.addEventListener("click", function() {
     let grid = document.getElementsByClassName('columns');
     for(let i = 0; i < grid.length; i++) {
         grid[i].addEventListener("mouseenter", function(event) {
             event.target.style.backgroundColor = getRandomColor();
+        });
+    }
+});
+normalButton.addEventListener("click", function() {
+    let grid = document.getElementsByClassName('columns');
+    for(let i = 0; i < grid.length; i++) {
+        grid[i].addEventListener("mouseenter", function(event) {
+            event.target.style.backgroundColor = "#7A28CB";
         });
     }
 });
@@ -46,7 +55,7 @@ function drawGrid(gridSize) {
             allColHW.forEach(cols => {
                 cols.style.height = colHeight + "px";
                 cols.style.width = colWidth + "px";
-            })
+            });
         }
 }
 }
@@ -68,9 +77,10 @@ function removeGrid() {
 }
 
 function resetGrid() {
-    let gridSize = prompt("Type in grid size (Max 100)", "");
-    if(gridSize > 100) {
-        alert("Insert a number below 100!");
+    let gridSize = prompt("Type in grid size (Max 48)", "");
+    
+    if(gridSize > 48) {
+        alert("Insert a number below 48!");
     }
     else {
     removeGrid();
